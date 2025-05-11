@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>iLoop - Timeline Filter</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="logoWrapper">
+      <img src="iLoopLogo.png" alt="iLoop Logo" id="logo" />
+    </div>
+
+    <div id="contentWrapper">
+      <div id="mainContent">
+        <div id="uploadSection">
+          <label for="fileInput" class="file-upload-btn">Upload</label>
+          <input type="file" id="fileInput" multiple accept="image/*" />
+          <span id="fileLabel">No file chosen</span>
+        </div>
+
+        <div id="filters">
+          <label>Year:</label>
+          <select id="yearSelect"><option value="none">None</option></select>
+
+          <label>Month:</label>
+          <select id="monthSelect"><option value="none">None</option></select>
+
+          <label>Day:</label>
+          <select id="daySelect"><option value="none">None</option></select>
+        </div>
+
+        <div id="timeSliderContainer">
+          <div id="timeDisplay">Time: 00:00</div>
+         
+          <input type="range" id="timeSlider" min="0" max="1439" step="1" value="0" /> 
+          <div class="slider-labels">
+            <span>0:00</span>
+            <span>23:59</span>
+          </div>
+        </div>
+
+        <div id="preview">
+          <div id="imageDateTop" class="image-date"></div>
+          <img id="mainImage" src="" alt="Preview will appear here" />
+        </div>
+      </div>
+
+      <div id="thumbnailSidebar">
+        <div id="thumbnailGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
